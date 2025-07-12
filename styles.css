@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+main {
+  flex: 1;
+}
+
+.main-content {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #0077b5; /* LinkedIn blue or your brand color */
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.contact-info i {
+  margin-right: 6px;
+  color: #0077b5;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0077b5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-content {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+
+/* Slideshow */
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide.active .slide-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.slide-text p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+
+/* About us */
+#about-us-cards h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#about-us-cards h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  flex: 1;
+  min-width: 280px;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.info-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.info-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 40px 40px 20px;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-contact,
+.footer-map {
+  flex: 1 1 300px;
+}
+
+.footer-contact h3,
+.footer-map h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #0077b5;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #0077b5;
+  width: 18px;
+  text-align: center;
+}
+
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social .social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 4px;
+  background-color: #0077b5;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.footer-social .facebook { background-color: #3b5998; }
+.footer-social .instagram { background-color: #E4405F; }
+.footer-social .linkedin { background-color: #0077b5; }
+
+.footer-social .social-icon:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Sticky Footer Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-contact,
+  .footer-map {
+    flex: 1 1 100%;
+  }
+}
